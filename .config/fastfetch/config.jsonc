@@ -92,11 +92,11 @@
             "key": "  󰅐",
             "keyColor": "blue"
         },
-        {
-            "type": "media",
-            "key": "  󰝚",
-            "keyColor": "blue"
-        },
+        // {
+        //     "type": "media",
+        //     "key": "  󰝚",
+        //     "keyColor": "blue"
+        // },
         {
             "type": "custom", // InformationEnd
             "format": "└────────────────────────────────────────────────┘"
