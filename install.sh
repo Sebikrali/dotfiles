@@ -15,5 +15,5 @@ read -p "pc or laptop: " comp
 
 dotfiles=$PWD
 cd $dst/alacritty
-ln -s $(dotfiles)/conflicts/$(comp)_alacritty.toml alacritty.toml
+ln -s "$dotfiles"/conflicts/"$comp"_alacritty.toml alacritty.toml
 
