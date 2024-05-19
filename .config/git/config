@@ -1,0 +1,29 @@
+[user]
+	name = Sebastian Kralicek
+	email = kraliseb@proton.me
+[core]
+	autocrlf = input
+	editor = nvim
+	pager = delta
+[init]
+	defaultBranch = main
+[alias]
+	lgo = log --graph --oneline --decorate
+	st = status
+	ai = add -i
+	c = commit
+	pl = pull
+	ps = push
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default

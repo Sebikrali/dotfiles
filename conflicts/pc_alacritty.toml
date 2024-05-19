@@ -1,0 +1,25 @@
+import = [
+    "~/dotfiles/.config/alacritty/alacritty.toml",
+]
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.16"
+
+[window.dimensions]
+columns = 205
+lines = 50
+
+[window.position]
+x = 30
+y = 30
+
+[window.padding]
+x = 15
+y = 15
+
+[font]
+size = 12.5
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"

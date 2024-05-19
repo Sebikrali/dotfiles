@@ -1,0 +1,28 @@
+# Vulkan SDK
+# source ~/sdk/vulkan/1.3.275.0/setup-env.sh
+# export VULKAN_SDK=~/sdk/vulkan/1.3.275.0/x86_64
+# export PATH=$VULKAN_SDK/bin:$PATH
+# export LD_LIBRARY_PATH=$VULKAN_SDK/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+# export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
+
+# XDG Variables
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+
+export ZDOTDIR=$HOME/.config/zsh
+
+export JAVA_HOME=$HOME/.local/share/jdks/Oracle_OpenJdk_22.0.1
+
+# GO compiler and toolchain
+export GOPATH=/home/sxk/.local/go
+
+# Node Version Managae
+export NVM_DIR="$HOME/.config/nvm"
+
+# vim: syntax=bash

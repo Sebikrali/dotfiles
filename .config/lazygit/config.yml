@@ -1,0 +1,71 @@
+gui:
+  scrollOffBehavior: 'jump'
+
+  sidePanelWidth: 0.3333 # number from 0 to 1
+  expandFocusedSidePanel: true
+
+  timeFormat: '02.01.2006' # https://pkg.go.dev/time#Time.Format
+  shortTimeFormat: '15:04'
+
+  # Colors: black red green yellow blue magenta cyan white '#ff00ff'
+  # Modifiers: bold default reverse (useful for high-contrast) underline strikethrough
+
+  theme:
+    activeBorderColor:
+      - blue
+      - bold
+    inactiveBorderColor:
+      - '#9d32e3' # white
+    searchingActiveBorderColor:
+      - cyan
+      - bold
+    optionsTextColor:
+      - blue
+    selectedLineBgColor:
+      - '#544296' # set to `default` to have no background colour
+    selectedRangeBgColor:
+      - underline
+    cherryPickedCommitBgColor:
+      - cyan
+    cherryPickedCommitFgColor:
+      - blue
+    unstagedChangesColor:
+      - red
+    defaultFgColor:
+      - default 
+
+  branchColors:
+    'main': '#9d32e3'
+    'docs': '#11aaff' # use a light blue for branches beginning with 'docs/'
+
+  nerdFontsVersion: "3"
+
+  authorColors:
+    'Sebastian Kralicek': 'red'
+    '*': 'blue'
+
+  showRandomTip: true
+
+  animateExplosion: true # shows an explosion animation when nuking the working tree
+
+git:
+  branchLogCmd: "git log --graph --color=always --decorate --oneline"
+
+  paging:
+    colorArg: never
+    pager: delta --dark --paging=never
+
+      # To have a commit message template
+      #commitPrefixes:
+      #    my_project: # This is repository folder name
+      #pattern: "^\\w+\\/(\\w+-\\w+).*"
+      #replace: '[$1] '
+
+notARepository: 'skip' # one of: 'prompt' | 'create' | 'skip' | 'quit'
+
+keybinding:
+  universal:
+    openRecentRepos: 'J'
+
+    nextTab: '.'
+    prevTab: ','

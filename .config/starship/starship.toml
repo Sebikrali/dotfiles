@@ -1,0 +1,154 @@
+# Helpful websites https://starship.rs/config/ https://starship.rs/presets/
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+#add_newline = true
+
+format = """
+$localip\
+$shlvl\
+$directory\
+$git_branch\
+$git_metrics\
+$docker_context\
+$c\
+$cmake\
+$golang\
+$haskell\
+$java\
+$kotlin\
+$gradle\
+$lua\
+$nodejs\
+$python\
+$rust\
+$cmd_duration\
+$shell\
+$character"""
+
+[character] 
+format = '$symbol '
+# success_symbol = ' [](bold blue)'
+# error_symbol = ' [](bold fg:161)'
+#  󰊕 \$
+success_symbol = ' [ ](#A6E3A1)'
+error_symbol = ' [ ](bold #f4586d)'
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+symbol = "󰏗 "
+#disabled = true
+
+[battery]
+disabled = true
+
+[c]
+symbol = " "
+format = '[ $symbol]($style)'
+detect_extensions = ['c', 'h', 'cpp']
+style = 'bold 45'
+
+[cmake]
+format = '[ $symbol]($style)'
+
+[cmd_duration]
+min_time = 5_000
+format = ' [-](bold 51) [󱑍 $duration]($style)' 
+style = 'bold underline 51'
+disabled = true
+
+[directory]
+format = '[$path]($style)[$read_only]($read_only_style)' 
+style = 'bold underline #88B3F9'
+truncation_length = 3
+truncation_symbol = '..'
+read_only = " 󰌾"
+truncate_to_repo = false
+
+[directory.substitutions]
+'~/.config' = 'Config'
+'~/Desktop' = 'Desktop'
+'~/Downloads' = 'Downloads'
+
+[docker_context]
+symbol = " "
+
+[git_branch]
+symbol = " "
+format = '[ \($symbol[$branch(:$remote_branch)](bold #A6D189)\)]($style)'
+style = "#A6D189"
+
+[git_metrics]
+added_style = 'bold blue'
+format = '\([+$added]($added_style)/[-$deleted]($deleted_style)\)'
+disabled = true
+
+[git_status]
+up_to_date = '✓ '
+modified = '󱇧 '
+staged = '[++\($count\)](underline 36)'
+format = '([\[$modified$staged$ahead_behind\]]($style))'
+style = 'bold 36'
+disabled = true
+
+[golang]
+symbol = " "
+format = '[ $symbol]($style)'
+style = '45'
+
+[gradle]
+symbol = " "
+format = '[ $symbol]($style)'
+style = "bright-cyan"
+
+[haskell]
+symbol = " "
+format = '[ $symbol]($style)'
+style = "63"
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+format = '[ ${symbol}]($style)'
+style = '161'
+
+[kotlin]
+symbol = " "
+format = '[ $symbol]($style)'
+style = "128"
+
+[lua]
+symbol = " "
+format = '[ $symbol]($style)'
+style = 'blue'
+
+[nodejs]
+symbol = " "
+format = '[ $symbol]($style)'
+style = "green"
+
+[os.symbols]
+Debian = " "
+Linux = " "
+Unknown = " "
+
+[python]
+symbol = " "
+format = ' [${symbol}]($style)'
+style = "yellow"
+
+[rust]
+symbol = " "
+format = ' [$symbol]($style)'
+
+[shell]
+bash_indicator = "" 
+zsh_indicator = "  " # 
+format = '[$indicator]($style)'
+style = "white"
+disabled = false
+

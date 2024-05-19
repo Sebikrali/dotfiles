@@ -1,0 +1,32 @@
+# Environment setup
+
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:$HOME/bin/scripts:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$HOME/bin/scripts:$PATH"
+fi
+export PATH
+
+# Nvim as Default Editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+# nvim as manpager
+export MANPAGER="nvim +Man!"
+export PAGER="less"
+
+# mcfly
+export MCFLY_FUZZY=0
+export MCFLY_RESULTS_SORT=LAST_RUN
+export MCFLY_PROMPT="❯"
+export MCFLY_KEY_SCHEME=vim
+
+# Ranger Conf file
+#export RANGER_LOAD_DEFAULT_RC=FALSE
+
+# Starship Shell Prompt
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+# Node Version Manager
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# vim: syntax=bash

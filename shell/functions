@@ -1,0 +1,54 @@
+# Shell functions
+
+# SSH agent
+setup_SSH_agent() {
+    env=~/.ssh/agent.env
+
+        agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+
+    agent_start () {
+        (umask 077; ssh-agent >| "$env")
+            . "$env" >| /dev/null ; }
+
+    agent_load_env
+
+# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
+        agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+
+        if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+            agent_start
+                ssh-add ~/.ssh/github ~/.ssh/gitlab ~/.ssh/reset_gitlab
+                elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+                ssh-add ~/.ssh/github ~/.ssh/gitlab ~/.ssh/reset_gitlab
+                fi
+
+                unset env
+                clear
+}
+setup_SSH_agent
+
+# Credits to ChrisTitus
+extract() {
+	for archive in "$@"; do
+		if [ -f "$archive" ]; then
+			case $archive in
+			*.tar.bz2) tar xvjf $archive ;;
+			*.tar.gz) tar xvzf $archive ;;
+			*.bz2) bunzip2 $archive ;;
+			*.rar) rar x $archive ;;
+			*.gz) gunzip $archive ;;
+			*.tar) tar xvf $archive ;;
+			*.tbz2) tar xvjf $archive ;;
+			*.tgz) tar xvzf $archive ;;
+			*.zip) unzip $archive ;;
+			*.Z) uncompress $archive ;;
+			*.7z) 7z x $archive ;;
+			*) echo "don't know how to extract '$archive'..." ;;
+			esac
+		else
+			echo "'$archive' is not a valid file!"
+		fi
+	done
+}
+
+# vim: syntax=bash

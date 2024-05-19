@@ -1,0 +1,91 @@
+# Distro dependent aliase
+
+# Source the os-release file
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    DISTRO=$ID
+else
+    echo "Cannot determine the distribution."
+    exit 1
+fi
+
+case "$DISTRO" in
+    "nobara")
+        alias pmi="sudo dnf install"
+        alias pmr="sudo dnf remove"
+        alias pms="dnf search"
+        alias pmo="dnf info"
+        alias pml="dnf list --installed"
+
+        alias u="sudo dnf upgrade; echo \"Flathub:\"; flatpak update"
+
+        alias cat="bat --theme Nord"
+        alias cal="cal -3mw"
+
+        alias pwo="poweroff"
+        ;;
+    "debian")
+        alias pmi="sudo nala install"
+        alias pmr="sudo nala purge"
+        alias pms="nala search -n"
+        alias pmo="nala show"
+        alias pml="nala list --installed"
+
+        alias u="sudo nala upgrade"
+
+        alias cat="batcat --theme Nord"
+        alias cal="ncal -3Mwb"
+
+        alias poweroff="systemctl poweroff"
+        alias reboot="systemctl reboot"
+        alias suspend="systemctl suspend"
+        ;;
+    "arch")
+        ;;
+    *)
+        echo "Unsupported distribution: $SXK_DISTRO"
+        ;;
+esac
+
+# Display-server dependent aliase
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    alias c="wl-copy"
+elif [ "$XDG_SESSION_TYPE" = "x11" ]; then
+    alias c="xclip -sel clip"
+fi
+
+alias f="fastfetch"
+alias j="z"
+alias ji="zi"
+alias l="eza -lah --icons --no-user"
+alias o="xdg-open" # Durch eine Funktion austauschen
+alias r="ranger"
+alias t="btop"
+alias v="nvim"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias df="df -h"
+alias du="ncdu --color dark"
+alias lg="lazygit"
+# alias ld="eza -laTD --no-user --icons --level"
+alias lt="eza -laT --level 3 --icons --no-user"
+# alias lynis="~/bin/lynis/lynis"
+alias mcm="make clean ; make"
+alias mkdir="mkdir -pv"
+alias rg="rg -. -L --binary --column"
+alias rm="trash"
+alias tr-e="trash-empty"
+alias tr-l="trash-list"
+alias ta="tmux attach"
+alias ts="tmux-start.sh"
+# alias up="~/bin/up"
+# alias dashboard="wtfutil"
+
+# Alias wget to use a custom hsts cache file location
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+
+# My time tracker
+# alias timesx="/home/sxk/Desktop/Projects/time-tracker/releases/timesx_1.1"
+
+# vim: syntax=bash
