@@ -69,3 +69,10 @@ keybinding:
 
     nextTab: '.'
     prevTab: ','
+
+    prevPage: '<pgup>' # go to previous page in list
+    nextPage: '<pgdown>' # go to next page in list
+
+    scrollUpMain: <disabled> # main panel scroll up
+    scrollDownMain: <disabled> # main panel scroll down
+
