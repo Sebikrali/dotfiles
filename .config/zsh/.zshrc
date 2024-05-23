@@ -9,7 +9,7 @@ unsetopt beep extendedglob
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/sxk/.zshrc'
+zstyle :compinstall filename '/home/sxk/dotfiles/.config/zsh/.zshrc'
 
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -26,13 +26,40 @@ compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 # ====[[ User Config ]]====
 
 # ===================== Options =====================
+# History
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
+# cd
+setopt cd_silent
+# completion
+setopt always_to_end list_packed
+
+# Recommended for vi mode
+export KEYTIMEOUT=1
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # ===================== Remaps =====================
 
-bindkey '^[a' autosuggest-accept
+bindkey '^F' autosuggest-accept
+bindkey '^Z' history-search-backward
+bindkey '^T' history-search-forward
+bindkey '^[.' insert-last-word
+
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
 
 # Set Clear to Ctrl+Alt+l because of tmux vim navigation collision
-bindkey '^[' clear
+bindkey '^[l' clear-screen
 
 
 # ===================== Environment =====================
@@ -43,7 +70,6 @@ source $HOME/dotfiles/shell/functions
 
 # ===================== Aliase =====================
 source $HOME/dotfiles/shell/aliase
-
 
 # ===================== Plugins =====================
 
