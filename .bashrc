@@ -44,7 +44,7 @@ esac
 #force_color_prompt=yes
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;32m\]\u_\[\033[01;34m\]\w\[\033[00m\] ❱ '
+    PS1='\[\033[01;32m\]\u_\[\033[01;34m\]\w\[\033[00m\]  '
 else
     PS1='\u@\h:\w\$ '
 fi
