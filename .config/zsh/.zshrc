@@ -9,7 +9,7 @@ unsetopt beep extendedglob
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/sxk/dotfiles/.config/zsh/.zshrc'
+zstyle :compinstall filename '/home/sxk/.config/zsh/.zshrc'
 
 autoload -Uz compinit
 zstyle ':completion:*' menu select
