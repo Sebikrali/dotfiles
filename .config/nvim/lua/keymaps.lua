@@ -54,6 +54,16 @@ vim.keymap.set("n", "c_", "c^", { desc = "Start of line (non-blank)"})
 
 vim.keymap.set("i", "<Tab>", "<Tab>", { desc = ""})
 
+-- Better saving shortcut
+vim.keymap.set('n', "<C-s>", ":w<CR>", { desc = "Save buffer"})
+vim.keymap.set('i', "<C-s>", "<ESC>:w<CR>", { desc = "Save buffer"})
+vim.keymap.set('n', "<C-M-s>", ":wa<CR>", { desc = "Save buffer"})
+
+vim.keymap.set('n', "<M-h>", "<C-w>>", { desc = "Increase width"})
+vim.keymap.set('n', "<M-j>", "<C-w>+", { desc = "Increase height"})
+vim.keymap.set('n', "<M-k>", "<C-w>-", { desc = "Decrease height"})
+vim.keymap.set('n', "<M-l>", "<C-w><", { desc = "Decrease width"})
+
 -- Add shortcuts to paste without filling the register
 vim.keymap.set("v", "<leader>p", "\"_dP", { noremap = true, silent = true, desc = "Overpaste without filling the register"})
 

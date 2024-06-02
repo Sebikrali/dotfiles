@@ -33,7 +33,7 @@ return {
         config = function ()
             require('everforest').setup {
                 background = "hard", -- soft, medium, hard
-                transparent_background_level = 1, -- higher = more transparent
+                transparent_background_level = 0, -- higher = more transparent
             }
         end,
     },
@@ -53,7 +53,7 @@ return {
         priority = 1000,
         opts = {
             style = "storm", -- `storm`, `moon`, `night` and `day`
-            transparent = true, -- Enable this to disable setting the background color
+            transparent = false, -- Enable this to disable setting the background color
         },
     },
 }

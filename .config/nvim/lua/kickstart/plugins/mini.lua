@@ -32,17 +32,18 @@ return {
       -- - shnf  - [S]urround [H]ighlight [N]ext [F]unction
       require('mini.surround').setup()
 
-      -- Multline 'f' and 't' jumps
-      -- Mapings just like normal f and t
-      require('mini.jump').setup {
-        delay = {
-          -- Delay between jump and highlighting all possible jumps
-          highlight = 250,
-
-          -- Delay between jump and automatic stop if idle (no jump is done)
-          idle_stop = 10000000,
-        },
-      }
+      -- Haven't found good use, its rather a hinderance
+      -- -- Multline 'f' and 't' jumps
+      -- -- Mapings just like normal f and t
+      -- require('mini.jump').setup {
+      --   delay = {
+      --     -- Delay between jump and highlighting all possible jumps
+      --     highlight = 250,
+      --
+      --     -- Delay between jump and automatic stop if idle (no jump is done)
+      --     idle_stop = 10000000,
+      --   },
+      -- }
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
