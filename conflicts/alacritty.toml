@@ -8,7 +8,7 @@ TERM = "xterm-256color"
 [window]
 decorations = "none"
 decorations_theme_variant = "None"
-opacity = 0.85
+opacity = 0.9 # 0.85
 startup_mode = "Windowed"
 title = "Alacritty"
 
