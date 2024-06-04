@@ -45,7 +45,7 @@ symbol = "󰏗 "
 disabled = true
 
 [c]
-symbol = " "
+symbol = "  "
 format = '[$symbol]($style)'
 detect_extensions = ['c', 'h', 'cpp']
 style = 'bold 45'
