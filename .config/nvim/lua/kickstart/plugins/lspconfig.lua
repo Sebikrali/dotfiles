@@ -61,6 +61,7 @@ return {
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap.
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
+          --vim.keymap.set('n', '<C-f>', vim.lsp.buf.signature_help, { buffer = event.buf, desc = 'LSP: Hover Signature'})
 
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 

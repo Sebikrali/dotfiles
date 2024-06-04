@@ -69,22 +69,65 @@ return {
         TypeParameter = "󰅲",
       }
 
+      -- Customization for Pmenu 
+      -- vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
+      -- vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "#22252A" })
+      vim.api.nvim_set_hl(0, "PmenuSel", { fg = "#000000", bg = "#F38BA8" })
+      vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "NONE" })
+      vim.api.nvim_set_hl(0, "CmpBorder", { fg = "#626880", bg = "NONE" })
+
+      -- vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#7E8294", bg = "NONE", strikethrough = true })
+      vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#A6E3A1", bg = "NONE", bold = true })
+      vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#A6E3A1", bg = "NONE" })
+      vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = "#CBA6F7", bg = "NONE", italic = true })
+
       cmp.setup {
         view = {
           entries = { name = 'custom', selection_order = 'near_cursor' }
         },
+        window = {
+          completion = {
+            side_padding = 1,
+            -- winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:None",
+            scrollbar = false,
+            border = {
+              { "╭", "CmpBorder" },
+              { "─", "CmpBorder" },
+              { "╮", "CmpBorder" },
+              { "│", "CmpBorder" },
+              { "╯", "CmpBorder" },
+              { "─", "CmpBorder" },
+              { "╰", "CmpBorder" },
+              { "│", "CmpBorder" },
+            },
+          },
+          documentation = {
+            border = {
+              { "╭", "CmpBorder" },
+              { "─", "CmpBorder" },
+              { "╮", "CmpBorder" },
+              { "│", "CmpBorder" },
+              { "╯", "CmpBorder" },
+              { "─", "CmpBorder" },
+              { "╰", "CmpBorder" },
+              { "│", "CmpBorder" },
+            },
+            -- winhighlight = "Normal:CmpDoc",
+          },
+        },
         formatting = {
+          fields = { "kind", "abbr", "menu" },
           format = function(entry, vim_item)
             -- Kind icons
-            vim_item.kind = string.format('%s (%s)', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
+            vim_item.kind = string.format('%s (%s)', kind_icons[vim_item.kind], string.lower(vim_item.kind)) -- This concatenates the icons with the name of the item kind
             -- Source
-            --[[ vim_item.menu = ({
-              buffer = "[Buffer]",
+            vim_item.menu = ({
+              buffer = "[Buf]",
               nvim_lsp = "[LSP]",
               luasnip = "[LuaSnip]",
               nvim_lua = "[Lua]",
               -- latex_symbols = "[LaTeX]",
-            })[entry.source.name] ]]
+            })[entry.source.name]
             return vim_item
           end
         },
