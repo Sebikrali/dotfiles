@@ -6,8 +6,12 @@ import = [
 WINIT_X11_SCALE_FACTOR = "1.16"
 
 [window.dimensions]
+# Xorg settings
 columns = 205
 lines = 50
+# Wayland settings
+# columns = 226
+# lines = 52
 
 [window.position]
 x = 30
@@ -17,7 +21,12 @@ y = 30
 x = 15
 y = 15
 
+[window]
+blur = true
+
 [font]
+# Wayland
+# size = 13.5
 size = 12.5
 
 [font.normal]

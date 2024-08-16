@@ -92,9 +92,10 @@ shopt -s autocd
 # Set Clear to Ctrl+Alt+l because of tmux vim navigation collision
 bind '"^[":"clear"'
 
-
 # ===================== Environment =====================
 source $HOME/dotfiles/shell/environment
+
+export SHELL=/bin/zsh
 
 # ===================== Functions =====================
 source $HOME/dotfiles/shell/functions
