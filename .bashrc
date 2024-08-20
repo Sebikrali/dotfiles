@@ -31,7 +31,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -94,8 +94,7 @@ bind '"^[":"clear"'
 
 # ===================== Environment =====================
 source $HOME/dotfiles/shell/environment
-
-export SHELL=/bin/zsh
+. "$CARGO_HOME/env"
 
 # ===================== Functions =====================
 source $HOME/dotfiles/shell/functions
@@ -105,7 +104,7 @@ source $HOME/dotfiles/shell/aliase
 
 
 # ===================== Evals =====================
-eval "$(mcfly init bash)"
+# eval "$(mcfly init bash)"
 eval "$(starship init bash)"
 # eval $(thefuck --alias)
 eval "$(zoxide init bash)"
