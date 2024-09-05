@@ -1,0 +1,31 @@
+#: black
+color0 #131415
+color8 #666666
+
+#: red
+color1 #d54e53
+color9 #864343
+
+#: green
+color2  #777c44
+color10 #b9ca4a
+
+#: yellow
+color3  #9e824c
+color11 #e7c547
+
+#: blue
+color4  #7aa6da
+color12 #556a7d
+
+#: magenta
+color5  #c397d8
+color13 #75617b
+
+#: cyan
+color6  #70c0b1
+color14 #5b7d78
+
+#: white
+color7  #eaeaea
+color15 #828482
