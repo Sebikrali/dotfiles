@@ -30,6 +30,6 @@ config.font_size = 14
 
 -- ====[[ LAUNCHING PROGRAMS ]]====
 
-config.default_prog = { "/bin/zsh" }
+-- config.default_prog = { "/bin/zsh" }
 
 return config
