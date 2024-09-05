@@ -13,7 +13,9 @@ extract() {
 			*.tar) tar xvf $archive ;;
 			*.tbz2) tar xvjf $archive ;;
 			*.tgz) tar xvzf $archive ;;
-			*.zip) unzip $archive ;;
+			*.zip) 
+				dir_name="${archive%.zip}"
+				unzip "$archive" -d "$dir_name" ;;
 			*.Z) uncompress $archive ;;
 			*.7z) 7z x $archive ;;
 			*) echo "don't know how to extract '$archive'..." ;;
