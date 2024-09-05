@@ -108,3 +108,5 @@ source $HOME/dotfiles/shell/aliase
 eval "$(starship init bash)"
 # eval $(thefuck --alias)
 eval "$(zoxide init bash)"
+
+exec /usr/bin/zsh
