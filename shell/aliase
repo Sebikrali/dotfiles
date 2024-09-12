@@ -41,6 +41,13 @@ case "$DISTRO" in
         alias suspend="systemctl suspend"
         ;;
     "arch")
+        alias pmi="sudo pacman -S"
+        alias pmr="sudo pacman -Rs"
+        alias pms="pacman -Ss"
+        alias pmo="pacman -Si"
+        alias pml="pacman -Q"
+
+        alias u="sudo pacman -Syu"
         ;;
     *)
         echo "Unsupported distribution: $SXK_DISTRO"
@@ -75,6 +82,7 @@ alias mcm="make clean ; make"
 alias mkdir="mkdir -pv"
 alias rg="rg -. -L --binary --column"
 alias rm="trash"
+alias rmr="rm"
 alias tr-e="trash-empty"
 alias tr-l="trash-list"
 alias ta="tmux attach"
