@@ -46,6 +46,7 @@ case "$DISTRO" in
         alias pms="pacman -Ss"
         alias pmo="pacman -Si"
         alias pml="pacman -Q"
+        alias pml-aur="pacman -Qm"
 
         alias u="sudo pacman -Syu"
         ;;
