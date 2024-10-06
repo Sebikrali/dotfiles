@@ -1,0 +1,17 @@
+configuration {
+  //modes: [ combi ];
+  //combi-modes: [ window, drun, run ];
+}
+
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+ 
+entry {
+    placeholder: "";
+    //orientation: horizontal;
+    //children: [ element-text, element-icon ];
+    //spacing: 5px;
+}
+
+//@theme "/home/sxk/.local/share/rofi/themes/simple-tokyonight.rasi"
+
+@theme "/home/sxk/.local/share/rofi/themes/catppuccin-mocha.rasi"
