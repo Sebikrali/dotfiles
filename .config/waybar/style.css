@@ -85,7 +85,7 @@ window#waybar {
 #battery.warning:not(.charging) {
     color: black;
     animation-name: blink;
-    animation-duration: 0.5s;
+    animation-duration: 1.0s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
