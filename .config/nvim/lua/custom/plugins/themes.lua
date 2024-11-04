@@ -9,7 +9,7 @@ return {
 		},
 		init = function()
 			-- Load the colorscheme here.
-			vim.cmd.colorscheme("catppuccin") -- catppuccin, rose-pine, everforest, nightfox, night-owl, tokyonight
+			vim.cmd.colorscheme("duskfox") -- catppuccin, rose-pine, everforest, nightfox, night-owl, tokyonight
 
 			-- You can configure highlights by doing something like:
 			-- vim.cmd.hi 'Comment gui=none'
@@ -55,5 +55,11 @@ return {
 			style = "storm", -- `storm`, `moon`, `night` and `day`
 			transparent = true, -- Enable this to disable setting the background color
 		},
+	},
+	{
+		"loctvl842/monokai-pro.nvim",
+		config = function()
+			require("monokai-pro").setup()
+		end,
 	},
 }
