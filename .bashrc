@@ -94,7 +94,7 @@ bind '"^[":"clear"'
 
 # ===================== Environment =====================
 source $HOME/dotfiles/shell/environment
-. "$CARGO_HOME/env"
+#. "$CARGO_HOME/env"
 
 # ===================== Functions =====================
 source $HOME/dotfiles/shell/functions
@@ -104,9 +104,25 @@ source $HOME/dotfiles/shell/aliase
 
 
 # ===================== Evals =====================
-# eval "$(mcfly init bash)"
+eval "$(mcfly init bash)"
 eval "$(starship init bash)"
 # eval $(thefuck --alias)
 eval "$(zoxide init bash)"
 
 exec /usr/bin/zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/sxk/local/share/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/sxk/local/share/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/sxk/local/share/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/sxk/local/share/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
