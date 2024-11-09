@@ -42,7 +42,7 @@ count_selected = { fg = "white", bg = "yellow" }
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "gray" }
+border_style  = { fg = "#CBA6F7" }
 
 # Highlighting
 syntect_theme = ""
@@ -55,12 +55,12 @@ syntect_theme = ""
 [status]
 separator_open  = ""
 separator_close = ""
-separator_style = { fg = "gray", bg = "gray" }
+separator_style = { fg = "black", bg = "black" }
 
 # Mode
-mode_normal = { bg = "blue", bold = true }
-mode_select = { bg = "red", bold = true }
-mode_unset  = { bg = "red", bold = true }
+mode_normal = { fg = "black", bg = "blue", bold = true }
+mode_select = { fg = "black", bg = "red", bold = true }
+mode_unset  = { fg = "black", bg = "red", bold = true }
 
 # Progress
 progress_label  = { bold = true }

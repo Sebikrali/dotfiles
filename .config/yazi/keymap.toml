@@ -22,7 +22,7 @@ keymap = [
 	{ on = "<C-u>", run = "arrow -50%",  desc = "Move cursor up half page" },
 	{ on = "<C-d>", run = "arrow 50%",   desc = "Move cursor down half page" },
 	{ on = "<C-b>", run = "arrow -100%", desc = "Move cursor up one page" },
-	{ on = "<C-f>", run = "arrow 100%",  desc = "Move cursor down one page" },
+	# { on = "<C-f>", run = "arrow 100%",  desc = "Move cursor down one page" },
 
 	{ on = "<S-PageUp>",   run = "arrow -50%",  desc = "Move cursor up half page" },
 	{ on = "<S-PageDown>", run = "arrow 50%",   desc = "Move cursor down half page" },
@@ -79,6 +79,9 @@ keymap = [
 	{ on = "<C-s>",     run = "escape --search",             desc = "Cancel the ongoing search" },
 	{ on = "z",         run = "plugin zoxide",               desc = "Jump to a directory using zoxide" },
 	{ on = "Z",         run = "plugin fzf",                  desc = "Jump to a directory or reveal a file using fzf" },
+	{ on = "!",         run = "shell \"$SHELL\" --block --confirm", desc = "Open shell here" },
+	{ on = "<C-n>",     run = "shell 'dragon -x -T \"$1\"' --confirm", desc = "Drag (and Drop) selected files" },
+	{ on = "l",         run = "plugin --sync smart-enter",  desc = "Enter the child directory, or open the file" },
 
 	# Linemode
 	{ on = [ "m", "s" ], run = "linemode size",        desc = "Set linemode to size" },
@@ -96,6 +99,7 @@ keymap = [
 
 	# Filter
 	{ on = "f", run = "filter --smart", desc = "Filter files" },
+	{ on = "<C-f>", run = "find --smart",            desc = "Find next file" },
 
 	# Find
 	{ on = "/", run = "find --smart",            desc = "Find next file" },
