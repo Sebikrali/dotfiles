@@ -9,6 +9,7 @@ config.audible_bell = "Disabled"
 -- ====[[ APPEARANCE ]]====
 
 config.color_scheme = "Catppuccin Mocha (Gogh)"
+-- config.color_scheme = "Monokai Pro (Gogh)"
 
 config.initial_cols = 225
 config.initial_rows = 53
@@ -31,5 +32,12 @@ config.font_size = 14
 -- ====[[ LAUNCHING PROGRAMS ]]====
 
 -- config.default_prog = { "/bin/zsh" }
+
+local act = wezterm.action
+
+config.keys = {
+	-- paste from the clipboard
+	{ key = "V", mods = "CTRL", action = act.PasteFrom("Clipboard") },
+}
 
 return config
