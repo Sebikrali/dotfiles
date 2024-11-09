@@ -49,6 +49,9 @@ case "$DISTRO" in
         alias pml-aur="pacman -Qm"
 
         alias u="sudo pacman -Syu"
+
+        alias miniconda="eval $(/home/sxk/.local/share/miniconda3/bin/conda shell.zsh hook)"
+        alias p="wl-paste"
         ;;
     *)
         echo "Unsupported distribution: $SXK_DISTRO"
