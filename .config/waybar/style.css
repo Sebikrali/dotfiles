@@ -1,17 +1,13 @@
 /* https://github.com/Alexays/Waybar/wiki/Styling */
 * {
-    /* margin-top: 2px; */
     border: solid;
     border-radius: 0px;
     font-family: "JetBrainsMono Nerd Font";
     font-size: 15px;
-    min-height: 0;
+    /* min-height: 10px; */
 }
 
 window#waybar {
-    /* margin-top: 2px; */
-    /* margin-left: 4px; */
-    /* margin-right: 4px; */
     background: transparent;
     color: white;
 }
@@ -47,22 +43,16 @@ window#waybar {
 
 #backlight {
     border-radius: 12px;
-    padding: 0px 10px;
+    margin-top: 6px;
+    padding: 4px 10px;
     background: #89B4FA;
     color: black;
 }
 
-#clock {
-    border-radius: 12px;
-    padding: 0 0 0 10px;
-    background-color: #ffffff;
-    color: black;
-    font-weight: bold;
-}
-
 #battery {
     border-radius: 12px;
-    padding: 0px 10px;
+    margin-top: 6px;
+    padding: 4px 10px;
     background-color: #94E2D5;
     color: black;
 }
@@ -96,9 +86,21 @@ window#waybar {
     background-color: #F38BA8;
 }
 
+#clock {
+    border-radius: 12px;
+    padding: 4px 4px 4px 10px;
+    margin-top: 6px;
+    margin-right: 8px;
+    background-color: #CDC4F5;
+    /* background-color: #ffffff; */
+    color: black;
+    font-weight: bold;
+}
+
 #network {
     border-radius: 12px;
-    padding: 0px 10px;
+    margin-top: 6px;
+    padding: 4px 10px;
     color: black;
     background: #A6E3A1;
 }
@@ -109,7 +111,8 @@ window#waybar {
 
 #pulseaudio {
     border-radius: 12px;
-    padding: 0px 10px;
+    margin-top: 6px;
+    padding: 4px 10px;
     color: black;
     background-color: #F38BA8;
 }
@@ -119,12 +122,13 @@ window#waybar {
     background-color: #585B70;
 }
 
-#custom-spotify {
-    color: rgb(102, 220, 105);
-}
+/* #custom-spotify { */
+/*     color: rgb(102, 220, 105); */
+/* } */
 
 #tray {
-    padding: 0px 10px;
+    margin-top: 6px;
+    padding: 4px 10px;
     border-width: 2px;
     border-radius: 12px;
     border-color: #F38BA8;
