@@ -8,7 +8,7 @@ config.audible_bell = "Disabled"
 
 -- ====[[ APPEARANCE ]]====
 
-Colorschemes = {
+local colorschemes = {
 	"Catppuccin Mocha (Gogh)",
 	"Everforest Dark Hard (Gogh)",
 	"Kasugano (terminal.sexy)",
@@ -16,20 +16,17 @@ Colorschemes = {
 	"duskfox",
 }
 
-Colorscheme_index = 1
-config.color_scheme = Colorschemes[Colorscheme_index]
+local colorscheme_index = 1
+config.color_scheme = colorschemes[colorscheme_index]
 
-function Cycle_color_scheme(window, pane)
-	Colorscheme_index = Colorscheme_index + 1
-	if Colorscheme_index > #Colorschemes then
-		Colorscheme_index = 1
+local function cycle_color_scheme(window)
+	colorscheme_index = colorscheme_index + 1
+	if colorscheme_index > #colorschemes then
+		colorscheme_index = 1
 	end
 
 	window:set_config_overrides({
-		colors = {
-			background = "black",
-		},
-		color_scheme = Colorschemes[Colorscheme_index],
+		color_scheme = colorschemes[colorscheme_index],
 	})
 end
 
@@ -37,6 +34,9 @@ wezterm.on("window-config-reloaded", function(window, _)
 	local overrides = window:get_config_overrides() or {}
 	if overrides.color_scheme then
 		print("Overides: " .. overrides.color_scheme)
+	end
+	if overrides.colors then
+		print("Overides: " .. overrides.colors.background)
 	end
 end)
 
@@ -74,8 +74,8 @@ config.keys = {
 	{
 		key = "Enter",
 		mods = "CTRL",
-		action = wezterm.action_callback(function(window, pane)
-			Cycle_color_scheme(window, pane)
+		action = wezterm.action_callback(function(window, _)
+			cycle_color_scheme(window)
 		end),
 	},
 }
