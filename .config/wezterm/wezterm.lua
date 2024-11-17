@@ -10,9 +10,6 @@ config.audible_bell = "Disabled"
 
 local colorschemes = {
 	"Catppuccin Mocha (Gogh)",
-	"Everforest Dark Hard (Gogh)",
-	"Kasugano (terminal.sexy)",
-	"Azu (Gogh)",
 	"duskfox",
 }
 
@@ -24,21 +21,17 @@ local function cycle_color_scheme(window)
 	if colorscheme_index > #colorschemes then
 		colorscheme_index = 1
 	end
+	print(colorschemes[colorscheme_index])
 
-	window:set_config_overrides({
-		color_scheme = colorschemes[colorscheme_index],
-	})
-end
-
-wezterm.on("window-config-reloaded", function(window, _)
 	local overrides = window:get_config_overrides() or {}
-	if overrides.color_scheme then
-		print("Overides: " .. overrides.color_scheme)
+	if not overrides.color_scheme then
+		overrides.color_scheme = colorschemes[colorscheme_index]
+	else
+		overrides.color_scheme = colorschemes[colorscheme_index]
 	end
-	if overrides.colors then
-		print("Overides: " .. overrides.colors.background)
-	end
-end)
+
+	window:set_config_overrides(overrides)
+end
 
 -- config.colors = {
 -- 	background = "#11111B",
