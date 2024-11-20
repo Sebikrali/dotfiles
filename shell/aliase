@@ -52,6 +52,7 @@ case "$DISTRO" in
 
         alias miniconda="eval $(/home/sxk/.local/share/miniconda3/bin/conda shell.zsh hook)"
         alias p="wl-paste"
+        alias nmtui=nmtui.sh
         ;;
     *)
         echo "Unsupported distribution: $SXK_DISTRO"
