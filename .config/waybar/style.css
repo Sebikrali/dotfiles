@@ -1,24 +1,40 @@
 /* https://github.com/Alexays/Waybar/wiki/Styling */
+
+/* Colors
+* Background (dark): #1E1E2E
+*
+*/
+
 * {
     border: solid;
     border-radius: 0px;
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 15px;
+    font-size: 16px;
     /* min-height: 10px; */
 }
 
+/* The main waybar window */
 window#waybar {
     background: transparent;
     color: white;
 }
 
-#window {
+
+/* ====[[ LEFT MODULES ]]====*/
+.modules-left {
+    background-color: #1E1E2E;
+    border-radius: 20px;
+    padding: 8px;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+#custom-logo {
+    color: #89B4FA;
     font-weight: bold;
-    font-family: "JetBrainsMono";
 }
 
 /* #workspaces {} */
-
 #workspaces button {
     padding: 0 5px;
     background: transparent;
@@ -29,32 +45,63 @@ window#waybar {
 #workspaces button.active {
     color: black;
     background: #F38BA8;
+    border-radius: 20px;
 }
 
-#mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
-}
 
-#mode {
-    padding: 0 3px;
-    margin: 0 2px;
-}
+/* ====[[ CENTER MODULES ]]====*/
+/* .modules-center */
 
-#backlight {
-    border-radius: 12px;
+#clock {
+    border-radius: 20px;
+    padding: 6px;
     margin-top: 6px;
-    padding: 4px 10px;
-    background: #89B4FA;
-    color: black;
+    background-color: #1E1E2E;
+    color: #CDC4F5;
+    font-weight: bold;
+}
+
+
+/* ====[[ RIGHT MODULES ]]====*/
+.modules-right {
+    background-color: #1E1E2E;
+    border-radius: 20px 0% 0% 20px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+#pulseaudio {
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+    color: #F38BA8;
+    background-color: #1E1E2E;
+}
+
+/* Maybe change it, so it isn't visible when muted */
+/* #pulseaudio.muted { */
+/*     color: white; */
+/* } */
+
+#network {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #A6E3A1;
+    background-color: #1E1E2E;
+}
+
+#network.disconnected {
+    background: #F38BA8;
+    color: #1E1E2E;
 }
 
 #battery {
-    border-radius: 12px;
-    margin-top: 6px;
-    padding: 4px 10px;
-    background-color: #94E2D5;
-    color: black;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #1E1E2E;
+    color: #94E2D5;
 }
 
 #battery icon {
@@ -62,7 +109,8 @@ window#waybar {
 }
 
 #battery.charging {
-    background-color: #FAB387;
+    background-color: #1E1E2E;
+    color: #FAB387;
 }
 
 @keyframes blink {
@@ -86,50 +134,18 @@ window#waybar {
     background-color: #F38BA8;
 }
 
-#clock {
-    border-radius: 12px;
-    padding: 4px 4px 4px 10px;
-    margin-top: 6px;
-    margin-right: 8px;
-    background-color: #CDC4F5;
-    /* background-color: #ffffff; */
-    color: black;
-    font-weight: bold;
+
+#backlight {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #1E1E2E;
+    color: #89B4FA;
 }
 
-#network {
-    border-radius: 12px;
-    margin-top: 6px;
-    padding: 4px 10px;
-    color: black;
-    background: #A6E3A1;
-}
-
-#network.disconnected {
-    background: #F38BA8;
-}
-
-#pulseaudio {
-    border-radius: 12px;
-    margin-top: 6px;
-    padding: 4px 10px;
-    color: black;
-    background-color: #F38BA8;
-}
-
-#pulseaudio.muted {
-    color: white;
-    background-color: #585B70;
-}
-
-/* #custom-spotify { */
-/*     color: rgb(102, 220, 105); */
-/* } */
 
 #tray {
-    margin-top: 6px;
-    padding: 4px 10px;
-    border-width: 2px;
-    border-radius: 12px;
-    border-color: #F38BA8;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
