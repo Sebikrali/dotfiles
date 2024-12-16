@@ -22,7 +22,10 @@ case "$DISTRO" in
         alias cat="bat --theme Nord"
         alias cal="cal -3mw"
 
-        alias pwo="poweroff"
+        alias pow="poweroff"
+
+        alias pvpn_up="sudo wg-quick up NL-FREE-145"
+        alias pvpn_down="sudo wg-quick down NL-FREE-145"
         ;;
     "debian")
         alias pmi="sudo nala install"
