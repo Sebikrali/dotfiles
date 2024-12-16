@@ -72,11 +72,29 @@ source $HOME/dotfiles/shell/aliase
 
 # Better vi mode
 source /home/sxk/.config/zsh/zsh-vi-mode-master/zsh-vi-mode.plugin.zsh
-# Syntax Highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Autosuggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Source the os-release file
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    DISTRO=$ID
+else
+    echo "Cannot determine the distribution."
+    exit 1
+fi
+
+case "$DISTRO" in
+    "nobara")
+        # Syntax Highlighting
+        source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        # Autosuggestions
+        source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+        ;;
+    "arch")
+        ;;
+    *)
+        echo "Unsupported distribution: $SXK_DISTRO"
+        ;;
+esac
 
 # ===================== Evals =====================
 # eval "$(mcfly init zsh)"
