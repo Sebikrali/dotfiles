@@ -138,7 +138,7 @@ Unknown = " "
 
 [python]
 symbol = " "
-format = '[${symbol}]($style)'
+format = '[${symbol} (\($virtualenv\) )]($style)'
 style = "yellow"
 
 [rust]
