@@ -31,9 +31,20 @@
     // ====[[ CENTER MODULES ]]====
     "clock": {
         "timezone": "Europe/Vienna",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "  {:%d.%m.%Y   %H:%M} ",
         "format-alt": "  {:%d.%m.%Y   %H:%M:%S} ",
+        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "format": {
+                // TODO: fix colors
+                // "months":     "<span color='#ffead3'><b>{}</b></span>",
+                // "days":       "<span color='#ffffff'><b>{}</b></span>",
+                "days":       "<span color='#ffffff'>{}</span>",
+                "weekdays":   "<span color='#a6e3a1'><b>{}</b></span>",
+                "today":      "<span color='#f38ba8'><b>{}</b></span>"
+            }
+        }
     },
 
     // ====[[ RIGHT MODULES ]]====
@@ -57,7 +68,7 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "  {essid} ({signalStrength}%)",
-        "format-ethernet": "󰈀  ",
+        "format-ethernet": "󰈀 ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "󰖪 Disconnected",
