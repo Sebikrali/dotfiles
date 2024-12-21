@@ -17,13 +17,15 @@ return {
             },
         }
 
-        local Terminal  = require('toggleterm.terminal').Terminal
-        local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
-
-        vim.keymap.set('n', '<leader>l', function () lazygit:toggle() end, { noremap = true, silent = true, desc = "Open lazygit" })
+        -- tmux navigation
         vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]])
         vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]])
         vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]])
         vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]])
+
+        -- embed lazygit
+        local Terminal  = require('toggleterm.terminal').Terminal
+        local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
+        vim.keymap.set('n', '<leader>gl', function () lazygit:toggle() end, { noremap = true, silent = true, desc = "Open lazygit" })
     end,
 }
