@@ -154,6 +154,17 @@ return {
 						},
 					},
 				},
+				pylsp = {
+					settings = {
+						pylsp = {
+							plugins = {
+								pycodestyle = {
+									enabled = false, -- disable linter warnings
+								},
+							},
+						},
+					},
+				},
 				-- jsonls = {
 				--   json = {
 				--     schemas = require('custom.plugins.schemastore').json.schemas {
