@@ -69,14 +69,16 @@ truncate_to_repo = false
 
 [directory.substitutions]
 '~/.config' = 'Config'
-'~/Desktop' = 'Desktop'
 '~/Downloads' = 'Downloads'
+'~/Desktop' = 'Desktop'
+'~/Desktop/Uni' = 'Uni'
 
 [docker_context]
 symbol = " "
 
 [git_branch]
 symbol = " "
+# format = '[\[$symbol[$branch(:$remote_branch)](bold #A6D189)\]]($style) '
 format = '[\($symbol[$branch(:$remote_branch)](bold #A6D189)\)]($style) '
 style = "#A6D189"
 
