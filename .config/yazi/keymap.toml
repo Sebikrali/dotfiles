@@ -74,12 +74,12 @@ keymap = [
 	{ on = ";",         run = "shell --interactive",         desc = "Run a shell command" },
 	{ on = ":",         run = "shell --block --interactive", desc = "Run a shell command (block until finishes)" },
 	{ on = ".",         run = "hidden toggle",               desc = "Toggle the visibility of hidden files" },
-	{ on = "s",         run = "search fd",                   desc = "Search files by name using fd" },
-	{ on = "S",         run = "search rg",                   desc = "Search files by content using ripgrep" },
+	{ on = "f",         run = "search fd",                   desc = "Search files by name using fd" },
+	{ on = "s",         run = "search rg",                   desc = "Search files by content using ripgrep" },
+	{ on = "S",         run = "shell \"$SHELL\" --block --confirm", desc = "Open shell here" },
 	{ on = "<C-s>",     run = "escape --search",             desc = "Cancel the ongoing search" },
 	{ on = "z",         run = "plugin zoxide",               desc = "Jump to a directory using zoxide" },
 	{ on = "Z",         run = "plugin fzf",                  desc = "Jump to a directory or reveal a file using fzf" },
-	{ on = "!",         run = "shell \"$SHELL\" --block --confirm", desc = "Open shell here" },
 	{ on = "<C-n>",     run = "shell 'dragon -x -T \"$1\"' --confirm", desc = "Drag (and Drop) selected files" },
 	{ on = "l",         run = "plugin --sync smart-enter",  desc = "Enter the child directory, or open the file" },
 
@@ -98,7 +98,7 @@ keymap = [
 	{ on = [ "c", "n" ], run = "copy name_without_ext", desc = "Copy the filename without extension" },
 
 	# Filter
-	{ on = "f", run = "filter --smart", desc = "Filter files" },
+	{ on = "F", run = "filter --smart", desc = "Filter files" },
 	{ on = "<C-f>", run = "find --smart",            desc = "Find next file" },
 
 	# Find

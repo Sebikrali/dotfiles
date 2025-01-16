@@ -6,8 +6,8 @@
 
 # : Flavor {{{
 
-[flavor]
-use = ""
+# [flavor]
+# dark = 
 
 # : }}}
 
