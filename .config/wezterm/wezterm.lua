@@ -54,10 +54,9 @@ config.window_padding = {
 
 config.font = wezterm.font("JetBrains Mono", { weight = "Medium" })
 config.font_size = 14
+config.harfbuzz_features = { 'calt=0' }
 
 -- ====[[ LAUNCHING PROGRAMS ]]====
-
--- config.default_prog = { "/bin/zsh" }
 
 local act = wezterm.action
 
