@@ -104,7 +104,7 @@ source $HOME/dotfiles/shell/aliase
 
 
 # ===================== Evals =====================
-eval "$(mcfly init bash)"
+# eval "$(mcfly init bash)"
 eval "$(starship init bash)"
 # eval $(thefuck --alias)
 eval "$(zoxide init bash)"
