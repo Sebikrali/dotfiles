@@ -1,9 +1,8 @@
-# Vulkan SDK
-# source ~/sdk/vulkan/1.3.275.0/setup-env.sh
-# export VULKAN_SDK=~/sdk/vulkan/1.3.275.0/x86_64
-# export PATH=$VULKAN_SDK/bin:$PATH
-# export LD_LIBRARY_PATH=$VULKAN_SDK/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
-# export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:$HOME/bin/scripts:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$HOME/bin/scripts:$PATH"
+fi
+export PATH
 
 # XDG Variables
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -11,16 +10,29 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
+# Vulkan SDK
+# source ~/sdk/vulkan/1.3.275.0/setup-env.sh
+# export VULKAN_SDK=~/sdk/vulkan/1.3.275.0/x86_64
+# export PATH=$VULKAN_SDK/bin:$PATH
+# export LD_LIBRARY_PATH=$VULKAN_SDK/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+# export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
+
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 
-export JAVA_HOME=$HOME/.local/share/jdks/Oracle_OpenJdk_22.0.1
+export JAVA_HOME=$XDG_DATA_HOME/jdks/Oracle_OpenJdk_22.0.1
 
 # GO compiler and toolchain
-export GOPATH=/home/sxk/.local/go
+export GOPATH="$XDG_DATA_HOME"/go
+export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
+export PATH=$PATH:/home/sxk/.local/go/bin
 
 # Node Version Managae
 export NVM_DIR="$HOME/.config/nvm"
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+# . "$CARGO_HOME/env"
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
 # vim: syntax=bash
