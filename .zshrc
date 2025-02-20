@@ -90,6 +90,10 @@ case "$DISTRO" in
         source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
         ;;
     "arch")
+        # Syntax Highlighting
+        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        # Autosuggestions
+        source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
         ;;
     *)
         echo "Unsupported distribution: $SXK_DISTRO"
