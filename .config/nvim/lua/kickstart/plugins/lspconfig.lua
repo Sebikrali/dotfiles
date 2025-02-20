@@ -182,6 +182,9 @@ return {
 				-- }
 			}
 
+      -- Direct LSP commands
+			vim.keymap.set("n", "gh", ":ClangdSwitchSourceHeader<CR>", { desc = "Clangd: Switch Source <-> Header"})
+
 			require("mason").setup()
 
 			-- You can add other tools here that you want Mason to install
