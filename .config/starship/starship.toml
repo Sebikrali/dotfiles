@@ -51,7 +51,7 @@ detect_extensions = ['c', 'h', 'cpp']
 style = 'bold 45'
 
 [cmake]
-format = '[ $symbol]($style)'
+format = '[$symbol]($style)'
 
 [cmd_duration]
 min_time = 5_000
