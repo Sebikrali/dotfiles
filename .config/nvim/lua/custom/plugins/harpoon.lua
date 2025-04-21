@@ -29,8 +29,8 @@ return {
 			--- @param list { ... }
 			--- @param option any
 			select = function(list_item, list, option)
-				vim.cmd("vsplit | terminal " .. list_item.value)
-				vim.cmd("vertical resize -40")
+					vim.cmd("ToggleTerm direction=float name=cmd")
+					vim.cmd("TermExec name=cmd cmd='" .. list_item.value .. "'")
 			end
 			}
 		})

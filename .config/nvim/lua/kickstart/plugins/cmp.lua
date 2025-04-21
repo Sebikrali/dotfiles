@@ -42,6 +42,9 @@ return {
 			local luasnip = require("luasnip")
 			luasnip.config.setup({})
 
+      -- Add custom snippets
+      luasnip.add_snippets("cpp", require("snippets.cpp"))
+
 			local kind_icons = {
 				Text = "",
 				Method = "󰊕", -- "󰆧"
