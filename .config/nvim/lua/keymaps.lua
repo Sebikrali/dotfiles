@@ -72,6 +72,11 @@ vim.keymap.set(
 	{ noremap = true, silent = true, desc = "Overpaste without filling the register" }
 )
 
+vim.keymap.set("n", "<leader>m", function()
+  local word = vim.fn.expand("<cword>")
+  vim.cmd("Man " .. word)
+end, { desc = "Open man page for word under cursor" })
+
 -- Add newlines without entering insert mode
 vim.keymap.set("n", "<M-o>", [[:normal! o<CR>k]], { noremap = true, silent = true })
 vim.keymap.set("n", "<M-O>", [[:normal! O<CR>j]], { noremap = true, silent = true })
