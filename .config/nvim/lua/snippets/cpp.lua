@@ -28,6 +28,7 @@ return {
 		t({ "", "}" }),
 	}),
 
+	-- Struct
 	s("stru", {
 		t({ "struct " }),
 		i(1, ""),
@@ -35,5 +36,19 @@ return {
 		i(2, ""),
 		t({ "", "};" }),
 	}),
+
+	-- include System
+	s("in", {
+		t({ "#include <" }),
+		i(1, ""),
+		t({ ">" }),
+	}),
+	-- include Local
+	s("inl", {
+		t({ "#include \"" }),
+		i(1, ""),
+		t({ "\"" }),
+	}),
+
 }
 

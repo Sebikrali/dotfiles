@@ -6,6 +6,9 @@ return {
     -- Vim Motions Practice Game (Primeagen)
     'ThePrimeagen/vim-be-good',
 
+    -- Vim golf for practicing vim
+    'vuciv/golf',
+
     -- Tmux Navigation Integration (moving flawlessly between tmux and neovim)
     'christoomey/vim-tmux-navigator',
 
