@@ -38,13 +38,13 @@ return {
 	}),
 
 	-- include System
-	s("in", {
+	s("inc", {
 		t({ "#include <" }),
 		i(1, ""),
 		t({ ">" }),
 	}),
 	-- include Local
-	s("inl", {
+	s("incl", {
 		t({ "#include \"" }),
 		i(1, ""),
 		t({ "\"" }),
