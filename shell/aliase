@@ -101,7 +101,4 @@ alias gc1="git clone --depth 1"
 # Alias wget to use a custom hsts cache file location
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
-# My time tracker
-# alias timesx="/home/sxk/Desktop/Projects/time-tracker/releases/timesx_1.1"
-
 # vim: syntax=bash
