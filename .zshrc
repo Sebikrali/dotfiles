@@ -45,6 +45,19 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # ===================== Remaps =====================
 
+bindkey -r '^R'
+autoload -Uz fzf-history-widget
+zle -N fzf-history-widget
+bindkey '^R' fzf-history-widget
+
+stty -ixon
+function tmux_session() {
+  command tmux_session.sh
+  zle reset-prompt
+}
+zle -N tmux_session
+bindkey '^S' tmux_session
+
 bindkey '^F' autosuggest-accept
 bindkey '^Z' history-search-backward
 bindkey '^T' history-search-forward
@@ -88,6 +101,10 @@ case "$DISTRO" in
         source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
         # Autosuggestions
         source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+        # fzf stuff
+        source /usr/share/fzf/shell/key-bindings.zsh
+        source /usr/share/fzf/shell/completion.zsh
         ;;
     "arch")
         # Syntax Highlighting
