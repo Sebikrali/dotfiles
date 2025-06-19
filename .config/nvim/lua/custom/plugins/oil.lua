@@ -1,3 +1,6 @@
+-- Keybinds
+-- <leader>o - Open oil in a floating window
+-- '-' - Open oil in a new buffer
 return {
 	"stevearc/oil.nvim",
 	lazy = false,

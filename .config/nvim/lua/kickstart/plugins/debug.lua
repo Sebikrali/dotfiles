@@ -1,6 +1,13 @@
--- debug.lua
---
--- Shows how to use the DAP plugin to debug your code.
+-- Keybinds
+-- 
+-- <F7> - Toggle UI
+-- <F5> - Start/Continue
+-- <F1> - Step Into
+-- <F2> - Step Over
+-- <F3> - Step Out
+-- <F9> - Terminate
+-- <leader>b - Toggle Breakpoint
+-- <leader>B - Toggle conditional Breakpoint
 return {
   'mfussenegger/nvim-dap',
   dependencies = {

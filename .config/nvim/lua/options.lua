@@ -62,6 +62,12 @@ vim.opt.scrolloff = 10
 
 -- [[ My Options ]]
 
+-- limits the maximum number of items to show in the popup menu
+vim.opt.pumheight = 16
+
+-- sets filetype for .h files to c and not cpp (which is default for some reason)
+vim.g.c_syntax_for_h = true
+
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false

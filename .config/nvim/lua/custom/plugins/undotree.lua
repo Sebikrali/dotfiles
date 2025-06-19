@@ -1,3 +1,5 @@
+-- Keybinds
+-- <leader>u - Toggle undotree ui
 return {
 	"jiaoshijie/undotree",
 	dependencies = "nvim-lua/plenary.nvim",

@@ -1,3 +1,11 @@
+-- Keybinds
+--
+-- <leader>xx - Diagnostics (Trouble)
+-- <leader>xX - Buffer Diagnostics (Trouble)
+-- <leader>cs - Symbols (Trouble)
+-- <leader>cl - LSP Definitions / references / ... (Trouble)
+-- <leader>xL - Location List (Trouble)
+-- <leader>xQ - Quickfix List (Trouble)
 return {
 	"folke/trouble.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },

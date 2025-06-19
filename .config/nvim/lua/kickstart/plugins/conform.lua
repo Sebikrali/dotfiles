@@ -1,3 +1,5 @@
+-- Keybinds
+-- <leader>f - [F]ormat buffer
 return {
 	{ -- Autoformat
 		"stevearc/conform.nvim",

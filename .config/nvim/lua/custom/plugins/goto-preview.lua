@@ -1,3 +1,10 @@
+-- Keybinds
+-- gpd - Preview definition
+-- gpt - Preview type definition
+-- gpi - Preview implementation
+-- gpD - Preview declaration
+-- gP  - Close all windows
+-- gpr - Preview references
 return {
     'rmagatti/goto-preview',
     opts = {

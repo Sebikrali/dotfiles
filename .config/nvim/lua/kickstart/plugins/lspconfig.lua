@@ -1,3 +1,29 @@
+-- Keybinds
+--
+-- Builtin
+-- grn - Buf rename
+-- gra - Code actions
+-- grr - Buf references
+-- gri - Buf implementation
+-- gO - Document symbols
+-- CTRL-S - Signature help
+--
+-- gd - Goto definition under cursor
+-- gr - Goto references under cursor
+-- gI - Goto implementation under cursor
+-- gD - Goto declaration under cursor
+--
+-- <leader>D - Open type definitions in telescope
+-- <leader>ds - Open document symbols in telescope
+-- <leader>ws - Open workspace symbols in telescope
+-- <leader>rn - Rename under cursor
+-- <leader>ca - Code Actions
+--
+-- K - Open hover documentation
+-- <C-k> - Open signature help
+-- gh - Run :LspClangdSwitchSourceHeader
+--
+-- :Mason - To open mason
 return {
 	{ -- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
@@ -15,8 +41,38 @@ return {
 			{ "folke/neodev.nvim", opts = {} },
 		},
 		config = function()
-			--  This function gets run when an LSP attaches to a particular buffer.
-			vim.api.nvim_create_autocmd("LspAttach", {
+      -- Enabel virtual_text
+      vim.lsp.handlers["textDocument/publishDiagnostics"] =
+      vim.lsp.with(
+        vim.lsp.diagnostic.on_publish_diagnostics,
+        {
+          virtual_text = true,
+        }
+      )
+
+      vim.diagnostic.config({
+        virtual_text = {
+          prefix = '@ ', -- Could be '●', '▎', 'x', '■', , 
+          current_line = true,
+        },
+        severity_sort = true,
+        float = {
+          source = "always",  -- Or "if_many"
+          border = {
+            { "╭"  , 'FloatBorder' },
+            { "─"  , 'FloatBorder' },
+            { "╮"  , 'FloatBorder' },
+            { "│"  , 'FloatBorder' },
+            { "╯"  , 'FloatBorder' },
+            { "─"  , 'FloatBorder' },
+            { "╰"  , 'FloatBorder' },
+            { "│"  , 'FloatBorder' },
+          },
+        },
+      })
+
+      --  This function gets run when an LSP attaches to a particular buffer.
+      vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 				callback = function(event)
 					-- In this case, we create a function that lets us more easily define mappings specific
@@ -31,7 +87,8 @@ return {
 					map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 
 					-- Find references for the word under your cursor.
-					map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+					-- map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+					map("gtr", require("telescope.builtin").lsp_references, "[G]oto [T]elescope [R]eferences")
 
 					-- Jump to the implementation of the word under your cursor.
 					--  Useful when your language has ways of declaring types without an actual implementation.
@@ -136,10 +193,6 @@ return {
 						},
 					},
 				},
-				-- pyright = {},
-				-- rust_analyzer = {},
-				-- tsserver = {},
-				--
 				lua_ls = {
 					-- cmd = {...},
 					-- filetypes = { ...},
@@ -182,8 +235,24 @@ return {
 				-- }
 			}
 
+      vim.lsp.enable('zls')
+
+      vim.lsp.config('zls', {
+        -- There are two ways to set config options:
+        --   - edit your `zls.json` that applies to any editor that uses ZLS
+        --   - set in-editor config options with the `settings` field below.
+        -- Further information on how to configure ZLS:
+        -- https://zigtools.org/zls/configure/
+        settings = {
+          zls = {
+            -- Neovim already provides basic syntax highlighting
+            semantic_tokens = "partial",
+          }
+        }
+      })
+
       -- Direct LSP commands
-			vim.keymap.set("n", "gh", ":ClangdSwitchSourceHeader<CR>", { desc = "Clangd: Switch Source <-> Header"})
+			vim.keymap.set("n", "gh", ":LspClangdSwitchSourceHeader<CR>", { desc = "Clangd: Switch Source <-> Header"})
 
 			require("mason").setup()
 
@@ -193,7 +262,7 @@ return {
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
 			})
-			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+			-- require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 			require("mason-lspconfig").setup({
 				handlers = {

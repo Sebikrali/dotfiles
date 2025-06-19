@@ -1,3 +1,15 @@
+-- Keybinds
+--
+-- On the completion popup window
+-- <C-n> - Select the [n]ext item
+-- <C-p> - Select the [p]revious item 
+-- <M-b> - Scroll the documentation window [b]ack
+-- <M-f> - Scroll the documentation window [f]orward
+-- <C-f> - [A]ccept the completion (mode: insert)
+-- <C-S-f>  - [A]ccept the completion (mode: replace)
+-- <C-Space> - Manually trigger a completion from nvim-cmp.
+-- <C-l> - move to the next expansion/insert location
+-- <C-h> - move to the last expansion/insert location
 return {
 	{ -- Autocompletion
 		"hrsh7th/nvim-cmp",
@@ -44,6 +56,11 @@ return {
 
       -- Add custom snippets
       luasnip.add_snippets("cpp", require("snippets.cpp"))
+      luasnip.add_snippets("c", require("snippets.c"))
+
+      local ELLIPSIS_CHAR = '…'
+      local MAX_LABEL_WIDTH = 25
+      local MAX_KIND_WIDTH = 14
 
 			local kind_icons = {
 				Text = "",
@@ -74,11 +91,9 @@ return {
 			}
 
 			-- Customization for Pmenu
-			-- vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
-			-- vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "#22252A" })
 			vim.api.nvim_set_hl(0, "PmenuSel", { fg = "#000000", bg = "#F38BA8" })
 			vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "#1E1E2E" })
-			vim.api.nvim_set_hl(0, "CmpBorder", { fg = "#626880", bg = "NONE" })
+			vim.api.nvim_set_hl(0, "CmpBorder", { fg = "#CBA6F7", bg = "NONE" })
 
 			-- vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#7E8294", bg = "NONE", strikethrough = true })
 			vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#A6E3A1", bg = "NONE", bold = true })
@@ -87,7 +102,7 @@ return {
 
 			cmp.setup({
 				view = {
-					entries = { name = "custom", selection_order = "top_down" },
+					entries = { name = "custom", selection_order = "near_cursor" },
 				},
 				window = {
 					completion = {
@@ -132,8 +147,34 @@ return {
 							nvim_lua = "[Lua]",
 							-- latex_symbols = "[LaTeX]",
 						})[entry.source.name]
-						return vim_item
-					end,
+            local content = vim_item.abbr
+
+            -- local fixed_width = 20
+
+            -- Set the fixed completion window width.
+            if fixed_width then
+              vim.o.pumwidth = fixed_width
+            end
+
+            -- Get the width of the current window.
+            local win_width = vim.api.nvim_win_get_width(0)
+
+            -- Set the max content width based on either: 'fixed_width'
+            -- or a percentage of the window width, in this case 20%.
+            -- We subtract 10 from 'fixed_width' to leave room for 'kind' fields.
+            local max_content_width = fixed_width and fixed_width - 10 or math.floor(win_width * 0.2)
+
+            -- Truncate the completion entry text if it's longer than the
+            -- max content width. We subtract 3 from the max content width
+            -- to account for the "..." that will be appended to it.
+            if #content > max_content_width then
+              vim_item.abbr = vim.fn.strcharpart(content, 0, max_content_width - 3) .. "..."
+            else
+              vim_item.abbr = content .. (" "):rep(max_content_width - #content)
+            end
+
+            return vim_item
+          end,
 				},
 				snippet = {
 					expand = function(args)

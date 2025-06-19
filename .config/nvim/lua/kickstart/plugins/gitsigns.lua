@@ -1,8 +1,27 @@
--- Here is a more advanced example where we pass configuration
--- options to `gitsigns.nvim`. This is equivalent to the following Lua:
---    require('gitsigns').setup({ ... })
+-- Keybinds
 --
--- See `:help gitsigns` to understand what the configuration keys do
+-- Navigation
+-- ]c - Jump to next git [c]hange
+-- [c - Jump to previous git [c]hange
+--
+-- Actions
+-- visual mode:
+-- <leader>gs - stage git hunk
+-- <leader>gr - reset git hunk
+-- normal mode:
+-- <leader>gs - [s]tage hunk
+-- <leader>gr - [r]eset hunk
+-- <leader>gS - [S]tage buffer
+-- <leader>gu - [u]ndo stage hunk
+-- <leader>gR - [R]eset buffer
+-- <leader>gp - [p]review hunk
+-- <leader>gb - [b]lame line
+-- <leader>gd - [d]iff against index
+-- <leader>gD - git [D]iff against last commit
+--
+-- Toggles
+-- <leader>tb - [T]oggle git show [b]lame line
+-- <leader>tD - [T]oggle git show [D]eleted
 return {
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',

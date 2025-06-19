@@ -1,3 +1,12 @@
+-- Keybinds
+--
+-- <C-t> - Open a floating terminal
+-- <leader>gl - Open lazygit
+--
+-- <C-h> - Move to left 
+-- <C-j> - Move to down
+-- <C-k> - Move to up
+-- <C-l> - Move to right
 return {
     'akinsho/toggleterm.nvim',
     version = "*",

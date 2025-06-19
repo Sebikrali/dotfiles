@@ -1,3 +1,29 @@
+-- Keybinds
+-- :Telescope
+--
+-- Keybinds inside Telescope
+-- Insert mode: <c-/> - Open keybind help menu
+-- Normal mode: ? - Open keybind help menu
+--
+-- <leader>sr - Resume last search
+--
+-- <leader>sd - Search Diagnostics
+-- <leader>sf - Search Files
+-- <leader>s. - Search Recent Files ("." for repeat)
+-- <leader>s/ - Search in open files
+-- <leader>sn - Search Neovim files
+--
+-- <leader>sg - Search by Grep
+-- <leader>sh - Search Help
+-- <leader>sk - Search Keymaps
+-- <leader>ss - Search Telescope commands
+--
+-- <leader>sw - Search current Word
+-- <leader>/ - Fuzzily search in current buffer
+--
+-- <leader><leader> - Find existing buffers
+    -- <C-d> - Delete buffer under cursor
+-- <leader>tc - Toggle (select) a Colorscheme
 return {
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
