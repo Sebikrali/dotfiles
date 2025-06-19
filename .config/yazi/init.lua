@@ -1,7 +1,8 @@
-require("full-border"):setup({
+require("full-border"):setup {
 	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
 	type = ui.Border.ROUNDED,
-})
+}
+
 
 -- so that symlinks are shown in the status bar
 function Status:name()
