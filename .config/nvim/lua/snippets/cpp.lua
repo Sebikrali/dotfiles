@@ -6,7 +6,7 @@ local i = ls.insert_node
 return {
 	-- For each
 	s("fore", {
-		t({ "for (" }),
+		t({ "for (const auto& " }),
 		i(1, ""), -- NOTE: Maybe add placeholder text
 		t({ " : " }),
 		i(2, ""),
@@ -23,6 +23,39 @@ return {
 		i(2, ""),
 		t({ "; " }),
 		i(3, ""),
+		t({ ") {", "\t" }),
+		i(4, ""),
+		t({ "", "}" }),
+	}),
+	-- Classic For for iterating over vector/array
+	s("foriter", {
+		t({ "for (size_t i = 0; i < " }),
+		i(1, ""),
+		t({ ".size(); i++) {", "\t" }),
+		i(2, ""),
+		t({ "", "}" }),
+	}),
+
+	-- Doc comment
+	s("doc", {
+		t({ "/**", " * @brief " }),
+		i(1, ""),
+		t({ ".", " * @param " }),
+		i(2, ""),
+		t({ ".", " * @param " }),
+		i(3, ""),
+		t({ ".", " * @return " }),
+		i(4, ""),
+		t({ ".", " */" }),
+	}),
+
+	-- Function
+	s("func", {
+		i(1, "return"),
+		t({ " " }),
+		i(2, "name"),
+		t({ "(" }),
+		i(3, "params"),
 		t({ ") {", "\t" }),
 		i(4, ""),
 		t({ "", "}" }),
