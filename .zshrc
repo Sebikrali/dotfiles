@@ -1,3 +1,4 @@
+source $HOME/.profile
 # General .zshrc settings
 
 # Lines configured by zsh-newuser-install
