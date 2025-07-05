@@ -93,13 +93,13 @@ shopt -s autocd
 bind '"^[":"clear"'
 
 # ===================== Environment =====================
-source $HOME/dotfiles/shell/environment
+source $HOME/dotfiles/_shell/environment
 
 # ===================== Functions =====================
-source $HOME/dotfiles/shell/functions
+source $HOME/dotfiles/_shell/functions
 
 # ===================== Aliase =====================
-source $HOME/dotfiles/shell/aliase
+source $HOME/dotfiles/_shell/aliase
 
 
 # ===================== Evals =====================
@@ -107,6 +107,4 @@ source $HOME/dotfiles/shell/aliase
 eval "$(starship init bash)"
 # eval $(thefuck --alias)
 eval "$(zoxide init bash)"
-
-exec /usr/bin/zsh
 
