@@ -2,7 +2,7 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
-[manager]
+[mgr]
 
 keymap = [
 	{ on = "<Esc>", run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
@@ -133,11 +133,13 @@ keymap = [
 	{ on = [ "g", "M" ],       run = "cd /mnt",     desc = "Go to /mnt" },
 	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go home" },
 	{ on = [ "g", "b" ],       run = "cd ~/bin",             desc = "Go to local bin" },
-	{ on = [ "g", "B" ],       run = "cd ~/Desktop/Uni/Bachelor/BscArbeit/repo/mesh/",             desc = "Go to my Bsc-Thesis Repo" },
+	{ on = [ "g", "B" ],       run = "cd ~/Desktop/Uni/Bachelor/BscArbeit/repo/mesh/",  desc = "Go to my Bsc-Thesis Repo" },
 	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go to the config directory" },
+	{ on = [ "g", "l" ],       run = "cd ~/.local",     desc = "Go to the data directory" },
 	{ on = [ "g", "." ],       run = "cd ~/dotfiles",   desc = "Go to my dotfiles" },
 	{ on = [ "g", "D" ],       run = "cd ~/Downloads",   desc = "Go to my downloads" },
 	{ on = [ "g", "d" ],       run = "cd ~/Desktop",   desc = "Go to the desktop" },
+	{ on = [ "g", "n" ],       run = "cd ~/Desktop/Notes",   desc = "Go to my Notes" },
 	{ on = [ "g", "U" ],       run = "cd ~/Desktop/Uni",   desc = "Go to my uni directory" },
 	{ on = [ "g", "6" ],       run = "cd ~/Desktop/Uni/Bachelor/6.Semester",   desc = "Go to my uni directory" },
 	{ on = [ "g", "7" ],       run = "cd ~/Desktop/Uni/Bachelor/7.Semester",   desc = "Go to my uni directory" },
