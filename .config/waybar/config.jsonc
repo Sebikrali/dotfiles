@@ -19,7 +19,7 @@
         "network",
         "battery",
         // "power-profiles-daemon",
-        "backlight",
+        "custom/brightness", // "backlight",
         "tray"
         // "custom/power"
     ],
@@ -31,8 +31,8 @@
     // ====[[ CENTER MODULES ]]====
     "clock": {
         "timezone": "Europe/Vienna",
-        "format": "  {:%d.%m.%Y   %H:%M} ",
-        "format-alt": "  {:%d.%m.%Y   %H:%M:%S} ",
+        "format": "   {:%d.%m.%Y   %H:%M} ",
+        "format-alt": "   {:%d.%m.%Y   %H:%M:%S} ",
         // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
@@ -113,6 +113,13 @@
     "tray": {
         "icon-size": 21,
         "spacing": 14
+    },
+
+    "custom/brightness": {
+        "format": "󰃠 {}%",
+        "exec": "~/.config/waybar/scripts/brightness.sh",
+        "interval": "once",
+        "signal": 10
     },
 
     // TODO: fix

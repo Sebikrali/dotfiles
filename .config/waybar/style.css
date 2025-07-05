@@ -8,8 +8,8 @@
 * {
     border: solid;
     border-radius: 0px;
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 16px;
+    font-family: "JetBrains Mono";
+    font-size: 15px;
     /* min-height: 10px; */
 }
 
@@ -148,9 +148,16 @@ window#waybar {
     color: #89B4FA;
 }
 
-
 #tray {
     border-radius: 20px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+#custom-brightness {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #1E1E2E;
+    color: #89B4FA;
 }
