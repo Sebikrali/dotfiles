@@ -1,0 +1,156 @@
+/* https://github.com/Alexays/Waybar/wiki/Styling */
+
+/* Colors
+* Background (dark): #1E1E2E
+*
+*/
+
+* {
+    border: solid;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 16px;
+    /* min-height: 10px; */
+}
+
+/* The main waybar window */
+window#waybar {
+    background: transparent;
+    color: white;
+}
+
+
+/* ====[[ LEFT MODULES ]]====*/
+.modules-left {
+    background-color: #1E1E2E;
+    border-radius: 20px;
+    padding: 8px;
+    padding-right: 14px;
+    margin-top: 6px;
+    margin-left: 8px;
+}
+
+#custom-logo {
+    color: #89DCEB;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+/* #workspaces {} */
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+    border-top: 2px solid transparent;
+}
+
+#workspaces button.active {
+    color: black;
+    background: #F38BA8;
+    border-radius: 20px;
+}
+
+
+/* ====[[ CENTER MODULES ]]====*/
+/* .modules-center */
+
+#clock {
+    border-radius: 20px;
+    padding: 6px;
+    margin-top: 6px;
+    background-color: #1E1E2E;
+    color: #CDC4F5;
+    font-weight: bold;
+}
+
+
+/* ====[[ RIGHT MODULES ]]====*/
+.modules-right {
+    background-color: #1E1E2E;
+    border-radius: 20px;
+    /* border-radius: 20px 0% 0% 20px; */
+    font-weight: bold;
+    margin-top: 6px;
+    margin-right: 8px;
+    padding-right: 6px;
+}
+
+#pulseaudio {
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+    color: #F38BA8;
+    background-color: #1E1E2E;
+}
+
+/* Maybe change it, so it isn't visible when muted */
+/* #pulseaudio.muted { */
+/*     color: white; */
+/* } */
+
+#network {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #A6E3A1;
+    background-color: #1E1E2E;
+}
+
+#network.disconnected {
+    background: #F38BA8;
+    color: #1E1E2E;
+}
+
+#battery {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #1E1E2E;
+    color: #94E2D5;
+}
+
+#battery icon {
+    color: red;
+}
+
+#battery.charging {
+    background-color: #1E1E2E;
+    color: #FAB387;
+}
+
+@keyframes blink {
+    to {
+        background-color: #F38BA8;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: black;
+    animation-name: blink;
+    animation-duration: 1.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.critical:not(.charging) {
+    color: black;
+    background-color: #F38BA8;
+}
+
+
+#backlight {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #1E1E2E;
+    color: #89B4FA;
+}
+
+
+#tray {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
