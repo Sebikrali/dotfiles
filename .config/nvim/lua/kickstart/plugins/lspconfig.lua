@@ -21,7 +21,7 @@
 --
 -- K - Open hover documentation
 -- <C-k> - Open signature help
--- gh - Run :LspClangdSwitchSourceHeader
+-- gh - Run :ClangdSwitchSourceHeader
 --
 -- :Mason - To open mason
 return {
@@ -252,7 +252,7 @@ return {
       })
 
       -- Direct LSP commands
-			vim.keymap.set("n", "gh", ":LspClangdSwitchSourceHeader<CR>", { desc = "Clangd: Switch Source <-> Header"})
+			vim.keymap.set("n", "gh", ":ClangdSwitchSourceHeader<CR>", { desc = "Clangd: Switch Source <-> Header"})
 
 			require("mason").setup()
 
