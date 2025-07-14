@@ -70,6 +70,15 @@ return {
 		t({ "", "};" }),
 	}),
 
+	-- Class
+	s("cla", {
+		t({ "class " }),
+		i(1, ""),
+		t({ " {", "\t" }),
+		i(2, ""),
+		t({ "", "};" }),
+	}),
+
 	-- include System
 	s("inc", {
 		t({ "#include <" }),

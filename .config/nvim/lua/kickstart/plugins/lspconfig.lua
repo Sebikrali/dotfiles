@@ -235,8 +235,14 @@ return {
 				-- }
 			}
 
-      vim.lsp.enable('zls')
+      -- GLSL language server
+      vim.lsp.enable('glsl_analyzer')
+      vim.lsp.config('glsl_analyzer', {
+        cmd = { 'glsl_analyzer' },
+        filetypes = { 'glsl' },
+      })
 
+      vim.lsp.enable('zls')
       vim.lsp.config('zls', {
         -- There are two ways to set config options:
         --   - edit your `zls.json` that applies to any editor that uses ZLS
