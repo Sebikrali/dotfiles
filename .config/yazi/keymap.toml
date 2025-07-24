@@ -134,6 +134,7 @@ keymap = [
 	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go home" },
 	{ on = [ "g", "b" ],       run = "cd ~/bin",             desc = "Go to local bin" },
 	{ on = [ "g", "B" ],       run = "cd ~/Desktop/Uni/Bachelor/BscArbeit/repo/mesh/",  desc = "Go to my Bsc-Thesis Repo" },
+	{ on = [ "g", "t" ],       run = "cd ~/.local/share/Trash/",     desc = "Go to the trash" },
 	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go to the config directory" },
 	{ on = [ "g", "l" ],       run = "cd ~/.local",     desc = "Go to the data directory" },
 	{ on = [ "g", "." ],       run = "cd ~/dotfiles",   desc = "Go to my dotfiles" },
