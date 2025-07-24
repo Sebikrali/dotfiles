@@ -28,7 +28,7 @@ return {
 		t({ "", "}" }),
 	}),
 	-- Classic For for iterating over vector/array
-	s("foriter", {
+	s("forit", {
 		t({ "for (size_t i = 0; i < " }),
 		i(1, ""),
 		t({ ".size(); i++) {", "\t" }),
