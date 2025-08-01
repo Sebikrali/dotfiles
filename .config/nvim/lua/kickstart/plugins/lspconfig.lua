@@ -21,7 +21,7 @@
 --
 -- K - Open hover documentation
 -- <C-k> - Open signature help
--- gh - Run :ClangdSwitchSourceHeader
+-- gh - Run :LspClangdSwitchSourceHeader
 --
 -- :Mason - To open mason
 return {
@@ -42,10 +42,8 @@ return {
 		},
 		config = function()
       -- Enabel virtual_text
-      vim.lsp.handlers["textDocument/publishDiagnostics"] =
-      vim.lsp.with(
-        vim.lsp.diagnostic.on_publish_diagnostics,
-        {
+      vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+        vim.lsp.diagnostic.on_publish_diagnostics, {
           virtual_text = true,
         }
       )
@@ -58,16 +56,6 @@ return {
         severity_sort = true,
         float = {
           source = "always",  -- Or "if_many"
-          border = {
-            { "╭"  , 'FloatBorder' },
-            { "─"  , 'FloatBorder' },
-            { "╮"  , 'FloatBorder' },
-            { "│"  , 'FloatBorder' },
-            { "╯"  , 'FloatBorder' },
-            { "─"  , 'FloatBorder' },
-            { "╰"  , 'FloatBorder' },
-            { "│"  , 'FloatBorder' },
-          },
         },
       })
 
@@ -258,7 +246,7 @@ return {
       })
 
       -- Direct LSP commands
-			vim.keymap.set("n", "gh", ":ClangdSwitchSourceHeader<CR>", { desc = "Clangd: Switch Source <-> Header"})
+			vim.keymap.set("n", "gh", ":LspClangdSwitchSourceHeader<CR>", { desc = "Clangd: Switch Source <-> Header"})
 
 			require("mason").setup()
 

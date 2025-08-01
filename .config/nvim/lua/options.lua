@@ -62,6 +62,19 @@ vim.opt.scrolloff = 10
 
 -- [[ My Options ]]
 
+vim.o.winborder = 'rounded'
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#ED8796", bg = NONE })
+    vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+  end,
+})
+
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#ED8796", bg = NONE })
+vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+
 -- limits the maximum number of items to show in the popup menu
 vim.opt.pumheight = 16
 
