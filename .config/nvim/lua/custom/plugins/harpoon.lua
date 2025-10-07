@@ -55,6 +55,8 @@ return {
 		vim.keymap.set("n", "<leader>2", function() harpoon:list("cmd"):select(2) end, { desc = "Execute the [2] build cmd" })
 		vim.keymap.set("n", "<leader>3", function() harpoon:list("cmd"):select(3) end, { desc = "Execute the [3] build cmd" })
 		vim.keymap.set("n", "<leader>4", function() harpoon:list("cmd"):select(4) end, { desc = "Execute the [4] build cmd" })
+		vim.keymap.set("n", "<leader>5", function() harpoon:list("cmd"):select(5) end, { desc = "Execute the [5] build cmd" })
+		vim.keymap.set("n", "<leader>6", function() harpoon:list("cmd"):select(6) end, { desc = "Execute the [6] build cmd" })
 
 		-- Toggle previous & next buffers stored within Harpoon list
 		-- vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
