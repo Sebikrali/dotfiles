@@ -45,43 +45,6 @@ export KEYTIMEOUT=1
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-# ===================== Remaps =====================
-
-bindkey -r '^R'
-autoload -Uz fzf-history-widget
-zle -N fzf-history-widget
-bindkey '^R' fzf-history-widget
-
-stty -ixon
-function tmux_session() {
-  command tmux_session.sh
-  zle reset-prompt
-}
-zle -N tmux_session
-bindkey '^S' tmux_session
-
-bindkey '^F' autosuggest-accept
-bindkey '^Z' history-search-backward
-bindkey '^T' history-search-forward
-bindkey '^[.' insert-last-word
-
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-
-# Set Clear to Ctrl+Alt+l because of tmux vim navigation collision
-bindkey '^[l' clear-screen
-
-
-# ===================== Environment =====================
-source $HOME/dotfiles/_shell/environment
-
-# ===================== Functions =====================
-source $HOME/dotfiles/_shell/functions
-
-# ===================== Aliase =====================
-source $HOME/dotfiles/_shell/aliase
 
 # ===================== Plugins =====================
 
@@ -113,14 +76,47 @@ case "$DISTRO" in
         source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
         # Autosuggestions
         source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+        # fzf stuff
+        source /usr/share/fzf/key-bindings.zsh
+        source /usr/share/fzf/completion.zsh
         ;;
     *)
         echo "Unsupported distribution: $SXK_DISTRO"
         ;;
 esac
 
+# ===================== Remaps =====================
+
+autoload -Uz fzf-history-widget
+zle -N fzf-history-widget
+bindkey -r '^R'
+bindkey '^R' fzf-history-widget
+
+bindkey '^F' autosuggest-accept
+bindkey '^Z' history-search-backward
+bindkey '^T' history-search-forward
+bindkey '^[.' insert-last-word
+
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+# Set Clear to Ctrl+Alt+l because of tmux vim navigation collision
+bindkey '^[l' clear-screen
+
+# ===================== Environment =====================
+source $HOME/dotfiles/_shell/environment
+
+# ===================== Functions =====================
+source $HOME/dotfiles/_shell/functions
+
+# ===================== Aliase =====================
+source $HOME/dotfiles/_shell/aliase
+
 # ===================== Evals =====================
 # eval "$(mcfly init zsh)"
 eval "$(starship init zsh)"
 # eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
+
