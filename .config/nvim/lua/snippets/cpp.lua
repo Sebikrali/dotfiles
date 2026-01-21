@@ -93,5 +93,41 @@ return {
 		t({ "\"" }),
 	}),
 
+	-- formatted log
+	s("fmt", {
+		t({ "std::cout << std::format(\""}),
+		i(1, ""),
+		t({ "\\n\", "}),
+		i(2, ""),
+		t({ ");" })
+	}),
+
+	s("cout", {
+		t({ "std::cout << \"" }),
+		i(1, ""),
+		t({ "\\n\";" })
+	}),
+
+	s("newline", {
+		t({ "std::cout << \"\\n" }),
+		i(1, ""),
+		t({ "\";" })
+	}),
+
+	s("ndb", {
+		t({ "#ifndef NDEBUG", "" }),
+		i(1, ""),
+		t({ "", "#endif" })
+	}),
+
+
+	-- Vulkan specific stuff
+	s("stype", {
+		t({ ".sType = VK_STRUCTURE_TYPE_" }),
+		i(1, ""),
+		t({ "," })
+	}),
+
+
 }
 

@@ -20,7 +20,7 @@
         "network",
         "battery",
         // "power-profiles-daemon",
-        "custom/brightness", // "backlight",
+        // "custom/brightness", // "backlight",
         "tray"
         // "custom/power"
     ],
