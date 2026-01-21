@@ -51,6 +51,9 @@ case "$DISTRO" in
         alias pml="pacman -Q"
         alias pml-aur="pacman -Qm"
 
+        alias pm-history="v /var/log/pacman.log"
+
+        alias pm-sync="sudo pacman -Syy"
         alias u="sudo pacman -Syu"
 
         alias p="wl-paste"
@@ -93,7 +96,8 @@ alias rmr="rm"
 alias tr-e="trash-empty"
 alias tr-l="trash-list"
 alias ta="tmux attach"
-alias ts="tmux-start.sh"
+alias ti="tmux_init.sh"
+alias ts="tmux_session.sh"
 # alias up="~/bin/up"
 # alias dashboard="wtfutil"
 alias gc1="git clone --depth 1"
