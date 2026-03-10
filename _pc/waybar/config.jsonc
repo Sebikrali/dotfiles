@@ -21,8 +21,8 @@
         "battery",
         // "power-profiles-daemon",
         // "custom/brightness", // "backlight",
-        "tray"
-        // "custom/power"
+        "tray",
+        "custom/power"
     ],
     // ====[[ LEFT MODULES ]]====
     "custom/logo": {
@@ -133,7 +133,6 @@
         "signal": 10
     },
 
-    // TODO: fix
     "custom/power": {
         "format" : "⏻ ",
         "tooltip": false,
