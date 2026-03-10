@@ -141,6 +141,7 @@ keymap = [
 	{ on = [ "g", "D" ],       run = "cd ~/Downloads",   desc = "Go to my downloads" },
 	{ on = [ "g", "d" ],       run = "cd ~/Desktop",   desc = "Go to the desktop" },
 	{ on = [ "g", "n" ],       run = "cd ~/Desktop/Notes",   desc = "Go to my Notes" },
+	{ on = [ "g", "m" ],       run = "cd ~/Music",   desc = "Go to my Music" },
 	{ on = [ "g", "U" ],       run = "cd ~/Desktop/Uni",   desc = "Go to my uni directory" },
 	{ on = [ "g", "6" ],       run = "cd ~/Desktop/Uni/Bachelor/6.Semester",   desc = "Go to my uni directory" },
 	{ on = [ "g", "7" ],       run = "cd ~/Desktop/Uni/Bachelor/7.Semester",   desc = "Go to my uni directory" },
