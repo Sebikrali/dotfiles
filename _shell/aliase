@@ -44,12 +44,13 @@ case "$DISTRO" in
         alias suspend="systemctl suspend"
         ;;
     "arch")
-        alias pmi="sudo pacman -S"
+        alias pmi="sudo pacman -Syy && sudo pacman -S"
         alias pmr="sudo pacman -Rns"
         alias pms="pacman -Ss"
         alias pmo="pacman -Si"
         alias pml="pacman -Q"
         alias pml-aur="pacman -Qm"
+        alias pm-rg="pacman -Q | rg "
 
         alias pm-history="v /var/log/pacman.log"
 

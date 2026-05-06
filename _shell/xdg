@@ -21,7 +21,7 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 
-export JAVA_HOME=$XDG_DATA_HOME/jdks/Oracle_OpenJdk_22.0.1
+# export JAVA_HOME=$XDG_DATA_HOME/jdks/Oracle_OpenJdk_22.0.1
 
 # GO compiler and toolchain
 export GOPATH="$XDG_DATA_HOME"/go
