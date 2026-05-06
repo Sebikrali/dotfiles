@@ -47,6 +47,8 @@
         // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
+            "mode": "year",
+            "mode-mon-col": 4,
             "format": {
                 // TODO: fix colors
                 // "months":     "<span color='#ffead3'><b>{}</b></span>",
