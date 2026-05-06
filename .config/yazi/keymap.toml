@@ -147,6 +147,7 @@ keymap = [
 	{ on = [ "g", "7" ],       run = "cd ~/Desktop/Uni/Bachelor/7.Semester",   desc = "Go to my uni directory" },
 	{ on = [ "g", "8" ],       run = "cd ~/Desktop/Uni/Bachelor/8.Semester",   desc = "Go to my uni directory" },
 	{ on = [ "g", "p" ],       run = "cd ~/Projects",             desc = "Go to my projects" },
+	{ on = [ "g", "P" ],       run = "cd ~/Pictures",             desc = "Go to my Pictures" },
 	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Go to a directory interactively" },
 
 	# Tabs
