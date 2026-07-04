@@ -30,6 +30,8 @@ vim.g.maplocalleader = ' '
 
 vim.g.have_nerd_font = true
 
+require('vim._core.ui2').enable({})
+
 require 'options'
 
 require 'keymaps'

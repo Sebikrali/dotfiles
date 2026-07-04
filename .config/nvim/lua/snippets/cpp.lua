@@ -139,6 +139,10 @@ return {
 		t({ "", "#endif" })
 	}),
 
+	s("af", {
+		t({ "assert(false);"}),
+	}),
+
 
 	-- Vulkan specific stuff
 	s("stype", {

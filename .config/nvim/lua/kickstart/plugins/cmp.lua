@@ -58,6 +58,7 @@ return {
       -- Add custom snippets
       luasnip.add_snippets("cpp", require("snippets.cpp"))
       luasnip.add_snippets("c", require("snippets.c"))
+      luasnip.add_snippets("markdown", require("snippets.markdown"))
 
       local ELLIPSIS_CHAR = '…'
       local MAX_LABEL_WIDTH = 25

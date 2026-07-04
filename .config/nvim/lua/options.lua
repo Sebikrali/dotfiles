@@ -18,7 +18,11 @@ vim.opt.mouse = "a"
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
-vim.opt.clipboard = "unnamedplus"
+-- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -60,6 +64,11 @@ vim.opt.cursorlineopt = "line"
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.o.confirm = true
+
 -- [[ My Options ]]
 
 vim.o.winborder = 'rounded'
@@ -99,5 +108,9 @@ vim.cmd("set guicursor=n-v-c-i:block,i-ci-ve:block-Cursor_insert/lCursor_insert,
 
 -- Re-open at last position
 vim.cmd([[ au BufReadPost * if line("'\"") >= 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif ]])
+
+
+vim.treesitter.language.add('cpp', { path = "/home/sxk/.local/share/nvim/parser/cpp.so" })
+
 
 -- vim: ts=2 sts=2 sw=2 et
