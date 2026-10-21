@@ -107,4 +107,7 @@ alias gc1="git clone --depth 1"
 # Alias wget to use a custom hsts cache file location
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
+alias tuvpn="sudo openconnect --useragent='AnyConnect OpenConnect' --no-external-auth --user='e12122093@student.tuwien.ac.at' --authgroup='1_TU_getunnelt' vpn.tuwien.ac.at"
+alias epssh="ssh ep12122093@g0.complang.tuwien.ac.at"
+
 # vim: syntax=bash
